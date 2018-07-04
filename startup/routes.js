@@ -9,6 +9,7 @@ const genres = require('../routes/genres');
 const userAuth = require('../middlewares/user-auth');
 const adminAuth = require('../middlewares/admin-auth');
 const errorHandler = require('../middlewares/error-handler'); 
+const returns = require('../routes/returns');
 
 
 module.exports = function (app) {
@@ -25,6 +26,8 @@ module.exports = function (app) {
     app.use('/api/users', users);
 
     app.use('/api/auth', auth);
+
+    app.use('/api/returns', returns);
 
     app.use(errorHandler);
 }

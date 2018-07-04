@@ -12,9 +12,10 @@ describe('user-auth middleware', () => {
     });
 
     afterEach(async () => {
-        server.close();
+         await server.close();
         await Genre.remove({});
-    })
+    });
+    
     beforeEach(() => {
         jwt = new User().getAuthToken();
         genre = { name: 'Genre1' };
